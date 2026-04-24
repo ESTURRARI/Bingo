@@ -1,0 +1,264 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f0f4fa;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --border: rgba(0, 0, 0, 0.1);
+  --col-B: #185FA5;
+  --col-I: #B85500;
+  --col-N: #1D9E75;
+  --col-G: #993556;
+  --col-O: #533AB7;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  color: var(--text);
+}
+
+.app {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* Título */
+h1.title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 6px;
+  color: var(--col-B);
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Bolinha grande */
+.big-ball-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.big-ball {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.8rem;
+  color: #fff;
+  background: var(--col-B);
+  position: relative;
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2), 0 4px 16px rgba(24, 95, 165, 0.25);
+  transition: background 0.2s;
+}
+
+.big-ball.animate {
+  animation: ballPop 0.38s ease;
+}
+
+@keyframes ballPop {
+  0%   { transform: scale(0.4); opacity: 0.2; }
+  65%  { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.big-ball-letter {
+  position: absolute;
+  top: 14px;
+  font-size: 0.88rem;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1px;
+  opacity: 0.82;
+}
+
+.big-ball-number {
+  margin-top: 10px;
+}
+
+.ball-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+
+/* Botões */
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.btn-draw {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  background: var(--col-B);
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 3px 10px rgba(24, 95, 165, 0.3);
+}
+
+.btn-draw:hover {
+  background: #0C447C;
+  box-shadow: 0 4px 14px rgba(24, 95, 165, 0.4);
+}
+
+.btn-draw:active {
+  transform: scale(0.97);
+}
+
+.btn-draw:disabled {
+  background: #c5cbd4;
+  cursor: default;
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-reset {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-reset:hover {
+  background: #e9eef5;
+  color: var(--text);
+}
+
+/* Contador */
+.counter {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.counter span {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Barra de progresso */
+.progress-wrap {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 99px;
+  height: 6px;
+  margin: 0 auto 1.8rem;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--col-B);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Grade de colunas */
+.columns-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.col-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-header {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  padding: 8px 0;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.col-B-h { background: var(--col-B); }
+.col-I-h { background: var(--col-I); }
+.col-N-h { background: var(--col-N); }
+.col-G-h { background: var(--col-G); }
+.col-O-h { background: var(--col-O); }
+
+.col-balls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+/* Bolinhas pequenas */
+.mini-ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+  transition: background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+  user-select: none;
+}
+
+.mini-ball.drawn-B { background: var(--col-B); color: #fff; border-color: var(--col-B); }
+.mini-ball.drawn-I { background: var(--col-I); color: #fff; border-color: var(--col-I); }
+.mini-ball.drawn-N { background: var(--col-N); color: #fff; border-color: var(--col-N); }
+.mini-ball.drawn-G { background: var(--col-G); color: #fff; border-color: var(--col-G); }
+.mini-ball.drawn-O { background: var(--col-O); color: #fff; border-color: var(--col-O); }
+
+.mini-ball.drawn-B.latest { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--col-B); }
+.mini-ball.drawn-I.latest { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--col-I); }
+.mini-ball.drawn-N.latest { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--col-N); }
+.mini-ball.drawn-G.latest { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--col-G); }
+.mini-ball.drawn-O.latest { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--col-O); }
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 12px;
+  color: var(--muted);
+}

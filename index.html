@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteador de Bingo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <h1 class="title">B I N G O</h1>
+    <p class="subtitle">Sorteador de 75 bolas</p>
+
+    <div class="big-ball-area">
+      <div class="big-ball" id="bigBall">
+        <span class="big-ball-letter" id="bigLetter"></span>
+        <span class="big-ball-number" id="bigNumber">—</span>
+      </div>
+      <p class="ball-label" id="ballLabel">Clique em "Sortear" para começar</p>
+    </div>
+
+    <div class="controls">
+      <button class="btn-draw" id="btnDraw" onclick="drawBall()">Sortear</button>
+      <button class="btn-reset" onclick="resetGame()">Reiniciar</button>
+    </div>
+
+    <div class="counter">Sorteadas: <span id="drawnCount">0</span> / 75</div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="columns-grid" id="columnsGrid"></div>
+
+    <p class="footer">Sorteador de Bingo &mdash; 75 bolas</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
